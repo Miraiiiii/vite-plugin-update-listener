@@ -3,21 +3,18 @@
  * @Author: 舌红
  * @Date: 2024-02-28 14:12:38
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-28 14:59:37
+ * @LastEditTime: 2024-02-28 15:18:53
  */
-import { existsSync, writeFileSync } from 'fs'
-import util from 'util'
-import { exec as processExec } from 'child_process'
+const { existsSync, writeFileSync } = require('fs')
+const util = require('util')
+const exec = util.promisify(require('child_process').exec)
 
-const exec = util.promisify(processExec)
-
-export default function vitePluginUpdateListener() {
+export default function vitePluginUpdateListener(configs = {}) {
   return {
     name: 'vite-plugin-update-listener',
     enforce: 'pre',
     apply: 'build',
     writeBundle() {
-      console.log('哈哈哈哈哈哈哈')
       let gitInfo = {
         commitHash: '',
         isTip: true
