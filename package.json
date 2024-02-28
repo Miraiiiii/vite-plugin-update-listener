@@ -1,0 +1,15 @@
+{
+  "name": "vite-plugin-update-listener",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "keywords": [
+    "vue",
+    "vite",
+    "vite-plugin-update-listener",
+    "update-listener"
+  ],
+  "author": "miraquai",
+  "license": "MIT",
+  "private": false
+}
